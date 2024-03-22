@@ -1,6 +1,25 @@
-body{
-    background-color:ForestGreen;
+body {
+    background-color: ForestGreen;
+    height: 100vh;
+    margin: 0;
+
+    place-content: center;
+    background: linear-gradient(-45deg, #269900, #228B22, #32CD32, #9fff80, #79ff4d);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
     }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 #Elements{
     position: fixed;
         top: 50%;
@@ -9,31 +28,183 @@ body{
         text-align:center;
         color:white;
          max-width: 90%;
-         max-height: 90%
-
-
+         max-height: 90%;
     }
-
-.hs{
-    font-size:1.5em;}
-
-
-.buttons{
-    color: white;
-        background-color: Lime;
-        font-size : 1em;
-        padding : 10px 20px;
-        border-radius:10px;
-        cursor: pointer;
-        transition: background-color 0.5s;
-        }
+h1{
+    font-size:5em;
+    color:Skyblue}
+h2{
+    font-size:2em;}
 
 .buttons:hover{
     background-color: SkyBlue;
     }
-#Watering{
-    font-size : 3em;}
-#SettingsButton{
-    position: absolute;
-    top: 10px; /* Dostosuj wartość, aby ustawić odległość od górnej krawędzi */
-    right: 10px;}
+#GoBackButton {
+    --b: 3px;   /* border thickness */
+    --s: .15em; /* size of the corner */
+    --c: fff;
+    padding: calc(.0em + var(--s)) calc(.3em + var(--s));
+    color: var(--c);
+    --_p: var(--s);
+    background: conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--c) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .2em;
+    font-weight: bold;
+    font-size: 2em;
+    cursor: pointer;
+    border: none;
+    margin: .1em;
+}
+#GoBackButton:hover,
+#GoBackButton:focus-visible {
+    --_p: 0px;
+    outline-color: var(--c);
+    outline-offset: .05em;
+}
+#GoBackButton:active {
+    background: var(--c);
+    color: #fff;
+}
+
+.confetti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  background: #ffd300;
+  top: 0;
+  opacity: 0;
+}
+.confetti-piece:nth-child(1) {
+  left: 7%;
+  transform: rotate(-79deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 0s;
+  animation-duration: 1s;
+}
+.confetti-piece:nth-child(2) {
+  left: 14%;
+  transform: rotate(-42deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+}
+.confetti-piece:nth-child(3) {
+  left: 21%;
+  transform: rotate(-25deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 2s;
+  animation-duration: 2.5s;
+}
+.confetti-piece:nth-child(4) {
+  left: 28%;
+  transform: rotate(-10deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 3s;
+  animation-duration: 2.5s;
+}
+.confetti-piece:nth-child(5) {
+  left: 35%;
+  transform: rotate(24deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 4s;
+  animation-duration: 2.5s;
+}
+.confetti-piece:nth-child(6) {
+  left: 42%;
+  transform: rotate(-9deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 0s;
+  animation-duration: 1s;
+}
+.confetti-piece:nth-child(7) {
+  left: 49%;
+  transform: rotate(-28deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+}
+.confetti-piece:nth-child(8) {
+  left: 56%;
+  transform: rotate(-49deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 2s;
+  animation-duration: 2.5s;
+}
+.confetti-piece:nth-child(9) {
+  left: 63%;
+  transform: rotate(-11deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 3s;
+  animation-duration: 2s;
+}
+.confetti-piece:nth-child(10) {
+  left: 70%;
+  transform: rotate(63deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 4s;
+  animation-duration: 2.5s;
+}
+.confetti-piece:nth-child(11) {
+  left: 77%;
+  transform: rotate(27deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 0s;
+  animation-duration: 1s;
+}
+.confetti-piece:nth-child(12) {
+  left: 84%;
+  transform: rotate(24deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+}
+.confetti-piece:nth-child(13) {
+  left: 91%;
+  transform: rotate(54deg);
+  animation: makeItRain 5000ms infinite ease-out;
+  animation-delay: 2s;
+  animation-duration: 2s;
+}
+.confetti-piece:nth-child(odd) {
+  background: #17d3ff;
+}
+.confetti-piece:nth-child(even) {
+  z-index: 1;
+}
+.confetti-piece:nth-child(4n) {
+  width: 5px;
+  height: 12px;
+  animation-duration: 5000ms;
+}
+.confetti-piece:nth-child(3n) {
+  width: 3px;
+  height: 10px;
+  animation-duration: 5000ms;
+  animation-delay: 2000ms;
+}
+.confetti-piece:nth-child(4n-7) {
+  background: #ff4e91;
+}
+
+@keyframes makeItRain {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(300px);
+  }
+}
